@@ -1,0 +1,44 @@
+#colderecha{
+    background-color:floralwhite;
+}
+#colizquierda{
+    background-color: floralwhite;
+}
+.card{
+    box-sizing: border-box;
+    margin-top: 18px;
+}
+.carousel{
+    margin-top: 18px;
+}
+#colmedio{
+    background-color:floralwhite;
+}
+#td{
+    width: 40%;
+}
+.paginas{
+    margin-top :18px;
+}
+#barraforo{
+    background-color:darkslategrey;
+}
+#post{
+    margin: 10px;
+}
+#register{
+    font-size: 85%;
+}
+#regisb{
+    font-size: 85%;
+}
+#nombre{
+    color: white;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+#foto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

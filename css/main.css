@@ -1,8 +1,5 @@
-#colderecha{
-    background-color:floralwhite;
-}
+
 #colizquierda{
-    background-color: floralwhite;
 }
 .card{
     box-sizing: border-box;
@@ -12,7 +9,6 @@
     margin-top: 18px;
 }
 #colmedio{
-    background-color:floralwhite;
 }
 #td{
     width: 40%;
@@ -41,4 +37,34 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    display: none;
+}
+#who{
+    text-align: center;
+}
+#desc{
+    font-size: 20px;
+}
+#colderecha
+{
+}
+#nw{
+    margin-left: 115px;
+}
+#nw1{
+    margin-left: 115px;
+}
+.postprofilepic{
+    display: none;
+    margin-left:1170;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin-bottom: -10;
+    margin-top: -70;
+}
+#postn{
+    text-align: right;
+    margin-right: 50px;
+    margin-top: -40;
 }

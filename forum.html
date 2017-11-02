@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <script type="text/javascript" src="./js/popper.min.js"></script>
+        <script type="text/javascript" src="./js/popper.js"></script>
+        <script type="text/javascript" src="./js/jquery.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DronArg</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="./logodrone.png" width="50" height="50">DronArg
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Menu <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">Novedades</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="forum.html">Foro</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <p id="nombre"></p>
+                    <img src="" id ="foto">
+                </form>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row" id="barraforo">
+                <button type="button" class="btn btn-success" id="post" data-toggle="modal" data-target=".bd-example-modal-lg">Nueva Publicacion</button>
+            </div>
+            <div class="row">
+                <div class="col-2" id ="colizquierda">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Novedades</div>
+                        <img class="card-img-top" src="./spark.jpg" alt="DJI Spark">
+                        <div class="card-body">
+                            <h4 class="card-title">Nuevo DJI Spark</h4>
+                            <p class="card-text">El nuevo drone de DJI,mas pequeño que todos,Y responde a gestos!</p>
+                            <a href="news.html" class="btn btn-primary">Leer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8" id="colmedio">
+                </div>
+                <div class ="col-2" id="colderecha">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">       
+                        <div class="card-header">Inicio de sesion</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="usr">Correo:</label>
+                                <input type="text" class="form-control" id="usr">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Contraseña:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="signInWithEmailAndPassword()" id ="blogin">Ingresar</button>
+                            <button type="button" class="btn btn-primary" onclick="emailsignOut()"disabled id="blogout">Salir</button>
+
+                            <p id="register">No estas registrado?<a href="#exampleModal" id= "regisb" data-toggle="modal" >Registrate</a></p>
+
+
+
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">        
+                        <div class="card-header">Iniciar sesion con Redes Sociales</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <img src="logofacebook.png" width ="40" height="30">
+                                <button type="button" class="btn btn-primary" onclick = "facebookSignin()" id="boton1">Iniciar con Facebook</button>
+                            </div>
+                            <div class="form-group">
+                                <img src="logogoogle.png" width ="30" height="30">
+                                <button type="button" class="btn btn-primary" onclick="googleSignin()"id ="boton">Iniciar con Google</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nueva Publicacion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="postitle">Titulo de la publicacion:</label>
+                        <input class="form-control form-control-lg" type="text" placeholder="Titulo de la publicacion" id="postitle">
+                        <form>
+                            <div class="form-group">
+                                <label for="postbody">Texto:</label>
+                                <textarea class="form-control" id="postbody" rows="3"></textarea>
+
+                            </div>
+                        </form>
+                        <label for="choosecat">Categoria:</label>
+                        <select class="form-control" id="choosecat">
+                            <option>Elige una categoria</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id ="postbtn" onclick="submitPost()">Publicar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAWWbLdwxeKruNHslAZVoQ75MswvaeT2So",
+                authDomain: "dronarg-3b230.firebaseapp.com",
+                databaseURL: "https://dronarg-3b230.firebaseio.com",
+                projectId: "dronarg-3b230",
+                storageBucket: "",
+                messagingSenderId: "892729595216"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript" src="./js/bootstrap.js"></script>
+        <script src="js/forum.js"></script>
+    </body>
+</html>

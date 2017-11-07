@@ -68,3 +68,7 @@
     margin-right: 50px;
     margin-top: -40;
 }
+#categorybadge{
+    position: relative;
+    float: right;
+}

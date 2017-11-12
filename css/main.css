@@ -72,3 +72,41 @@
     position: relative;
     float: right;
 }
+.form-check-label{
+    margin-top: 15px;
+}
+#botonr{
+    margin-bottom: 15px;
+    width: 150px;
+    margin-left: 1080px;
+    margin-top: -54px;
+}
+#botonc{
+    margin-bottom: 15px;
+    width: 150px;
+    margin-left: 920px;
+}
+#labelr{
+    color: white;
+}
+#locationchk{
+    margin-top: -40px;
+    margin-left: 200px;
+}
+#boton{
+    margin-left: 5px;
+}
+#rn{
+    color: black;
+    margin-top: -15px;
+    margin-left: 55px;
+    margin-bottom: -1px;
+}
+#replydiv{
+}
+#ri{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: -15px;
+}

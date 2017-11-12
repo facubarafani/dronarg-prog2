@@ -105,7 +105,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id = "bodynewpost">
                         <label for="postitle">Titulo de la publicacion:</label>
                         <input class="form-control form-control-lg" type="text" placeholder="Titulo de la publicacion" id="postitle">
                         <form>
@@ -121,7 +121,20 @@
                             <option value = "1">Imagen</option>
                             <option value = "2">Consulta</option>
                             <option value = "3">Problema Tecnico</option>
+                            <option value = "4">Ubicacion</option>
                         </select>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" id = "chk1">
+                                Añadir imagenes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" id = "locationchk">
+                                <input type="checkbox" class="form-check-input" id = "chk2">
+                                Añadir ubicacion
+                            </label>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" id ="postbtn" onclick="submitPost()">Publicar</button>

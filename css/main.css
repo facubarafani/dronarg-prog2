@@ -103,6 +103,7 @@
     margin-bottom: -1px;
 }
 #replydiv{
+    display: none;
 }
 #ri{
     width: 40px;
@@ -110,3 +111,7 @@
     border-radius: 50%;
     margin-bottom: -15px;
 }
+#showreplies{
+    margin-left: 20px;
+}
+display: none;

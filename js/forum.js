@@ -25,6 +25,7 @@ var database = firebase.database();
 var cat;
 var ta;
 var postReply = document.getElementById('replytext');
+var x;
 
 $('#choosecat').change(function () {
     cat = $(this).find("option:selected").text();
@@ -92,17 +93,21 @@ function actualizarDb(){
         var replyb = document.createElement('button');
         var likeb = document.createElement('button');
         var spanlb = document.createElement('span');
+        var showReply = document.createElement('button');
+        var x = snap.child("replies").numChildren();
         div.classList = "card text-white bg-dark mb-3";
         divh.classList = "card-header";
         divb.classList = "card-body";
         divf.classList = "card-footer";
         spanc.classList = "badge badge-secondary";
         replyb.classList = "btn btn-info";
+        showReply.classList = "btn btn-info";
         med.append(div);
         div.append(divh);
         div.append(divb);
         div.append(divf);
         img.src = snap.val().url;
+        showReply.setAttribute("id","showreplies");
         img.setAttribute("class", "postprofilepic");
         namepost.setAttribute("id", "postn");
         spanc.setAttribute("id","categorybadge");
@@ -112,11 +117,13 @@ function actualizarDb(){
         //divh.innerHTML = snap.val().title;
         spanc.innerHTML = snap.val().category;
         replyb.innerHTML = "Responder";
+        showReply.innerHTML = "Mostrar Comentarios("+x+")";
         divh.appendChild(tit);
         divh.appendChild(namepost);
         divh.appendChild(img);
         divf.appendChild(spanc);
         divf.appendChild(replyb);
+        divf.appendChild(showReply);
         divb.innerHTML = snap.val().body;
         $(".postprofilepic").css("display","block");
 
@@ -150,10 +157,19 @@ function actualizarDb(){
                 $(divr).remove();
                 $(btnc).remove();
                 $(btnr).remove();
-                divf.appendChild(replyb);
+                divf.insertBefore(replyb, divf.firstChild);
                 $(replyb).click(rp);
             })
+            $(btnr).click(function(){
+                $(divr).remove();
+                $(btnc).remove();
+                $(btnr).remove();
+                divf.insertBefore(replyb, divf.firstChild);
+                $(replyb).click(rp);
+            });
         })
+
+
         let replies = firebase.database().ref(`/posts/${snap.key}/replies`);
         replies.on("child_added", s => {
             console.log(s.val().reply)
@@ -178,8 +194,16 @@ function actualizarDb(){
             divrh.appendChild(ri);
             divrh.appendChild(rn);
             divrb.innerHTML = (s.val().reply);
+            $(showReply).click(function xd(){
+                $(divrp).css('display','block');
+                showReply.innerHTML = "Ocultar Comentarios("+x+")";
+                $(showReply).click(function(){
+                    $(divrp).css('display','none');
+                    showReply.innerHTML = "Mostrar Comentarios("+x+")";
+                    $(showReply).click(xd);
+                })
+            })
         })
-
     });
 }
 

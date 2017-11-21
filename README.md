@@ -2,6 +2,8 @@
 * Nombre del Proyecto: DronArg
 * Integrante: Barafani, Facundo
 * Curso: 5 "C"
+# DronArg
+![DronArg](/src/logodrone.png)
 # Descripcion
 Pagina web donde el usuario tiene la posibilidad de registrarse con redes sociales como Facebook,Google,etc.(En caso de no poseer ninguna de estas redes sociales puedes registrarte con tu email)
 En esta pagina se podran compartir ubicaciones para volar tu drone en Argentina y tambien incluira un foro donde podras publicar tus imagenes tomadas con tu drone o realizar una consulta a otros usuarios que tengan conocimiento del tema, Ademas de un seccion de novedades donde te mantendras informado sobre las ultimas noticias sobre drones.

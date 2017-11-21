@@ -234,17 +234,12 @@ $('#chk1').change(function() {
     var divi = document.createElement('div');
     var label = document.createElement('label');
     var input = document.createElement('input');
-    var uploadbtn = document.createElement('button');
     divi.classList = "form-group";
     input.classList = "form-control-file";
-    uploadbtn.classList = "btn btn-success";
     label.setAttribute("for","File")
     input.setAttribute("type","file");
     input.setAttribute("id","filexd");
     form1.setAttribute("id","formxd")
-    uploadbtn.setAttribute("id","uploadb");
-    uploadbtn.innerHTML = "Subir Imagen";
-    uploadbtn.setAttribute("onclick","uploadImage()");
     if ($('input#chk1').is(':checked')) {
         $('input#Checkbox1').addClass('checked');
         body.append(form1);

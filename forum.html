@@ -129,15 +129,9 @@
                                 Añadir imagenes
                             </label>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label" id = "locationchk">
-                                <input type="checkbox" class="form-check-input" id = "chk2">
-                                Añadir ubicacion
-                            </label>
-                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id ="postbtn" onclick="submitPost()">Publicar</button>
+                        <button type="button" class="btn btn-primary" id ="postbtn" onclick="uploadImage()">Publicar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
@@ -208,6 +202,13 @@
                 </div>
             </div>
         </div>
+        <div id="imageModal" class="modal">
+            <!-- The Close Button -->
+            <span class="close" id="closee">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+        </div>
         <script>
             // Initialize Firebase
             var config = {
@@ -215,7 +216,7 @@
                 authDomain: "dronarg-3b230.firebaseapp.com",
                 databaseURL: "https://dronarg-3b230.firebaseio.com",
                 projectId: "dronarg-3b230",
-                storageBucket: "",
+                storageBucket: "dronarg-3b230.appspot.com",
                 messagingSenderId: "892729595216"
             };
             firebase.initializeApp(config);

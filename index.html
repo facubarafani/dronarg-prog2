@@ -25,7 +25,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id= "header">
             <a class="navbar-brand" href="index.html">
                 <img src="./logodrone.png" width="50" height="50">DronArg
             </a>
@@ -160,6 +160,7 @@
                             <p id="desc">DronArg es una pagina en la cual podes compartir tus imagenes sacadas con tu drone a lo largo de Argentina.Tambien tenemos un foro en el cual otros usuarios podran responder a tus preguntas que tengas relacionadas con el tema.Te mantendremos informado con las ultimas novedades relacionadas a drones.</p>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-2" id="colderecha" data-spy="affix">
                     <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">       
@@ -197,6 +198,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="footer">
         </div>
         <!-- MODAL REGISTRO CON E-MAIL -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -262,18 +265,18 @@
                     </div>
                 </div>
             </div>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyAWWbLdwxeKruNHslAZVoQ75MswvaeT2So",
-                authDomain: "dronarg-3b230.firebaseapp.com",
-                databaseURL: "https://dronarg-3b230.firebaseio.com",
-                projectId: "dronarg-3b230",
-                storageBucket: "",
-                messagingSenderId: "892729595216"
-            };
-            firebase.initializeApp(config);
-        </script>
-        <script type="text/javascript" src="./js/bootstrap.js"></script>
-    </body>
-</html>
+            <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyAWWbLdwxeKruNHslAZVoQ75MswvaeT2So",
+                    authDomain: "dronarg-3b230.firebaseapp.com",
+                    databaseURL: "https://dronarg-3b230.firebaseio.com",
+                    projectId: "dronarg-3b230",
+                    storageBucket: "",
+                    messagingSenderId: "892729595216"
+                };
+                firebase.initializeApp(config);
+            </script>
+            <script type="text/javascript" src="./js/bootstrap.js"></script>
+            </body>
+        </html>

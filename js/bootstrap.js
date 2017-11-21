@@ -22,6 +22,8 @@ $(document).ready(function () {
         }
     });
 });
+
+
 window.fbAsyncInit = function() {
     FB.init ({
         appId      : '2044624762432582',

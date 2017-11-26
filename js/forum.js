@@ -33,11 +33,6 @@ var downloadURL;
 $('#choosecat').change(function () {
     cat = $(this).find("option:selected").text();
 });
-
-//function submitPost() {
-
-
-
 function submitReply(key){
     console.log(key)
     postReply = document.getElementById('replytext').value;
@@ -49,6 +44,7 @@ function submitReply(key){
     }
     var replies = firebase.database().ref(`/posts/${key}/replies`);
     replies.push(data1);
+    $(divr).remove();
 }
 function actualizarDb(){
     var postsRef = firebase.database().ref('/posts/');
@@ -109,7 +105,7 @@ function actualizarDb(){
         spanc.setAttribute("id","categorybadge");
         div.setAttribute("id", snap.key);
         imagex.setAttribute('id',"fotopostt");
-        //imagex.setAttribute('align','right');
+        //        imagex.setAttribute('onclick','resizeImg(this)');
         tit.innerHTML = snap.val().title;
         namepost.innerHTML = snap.val().user;
         //divh.innerHTML = snap.val().title;
@@ -207,24 +203,13 @@ function actualizarDb(){
                 })
             })
         })
-        // Get the modal
-        var modal = document.getElementById('imageModal');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var imgg = document.getElementById('fotopostt');
-        var modalImg = document.getElementById("img01");
-        imgg.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementById("closee");
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        } 
+        $(function() {
+            $('img').on('click', function() {
+                $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+                $('#enlargeImageModal').modal('show');
+            });
+        });
+        
     });
 }
 
@@ -246,7 +231,6 @@ $('#chk1').change(function() {
         form1.append(divi);
         divi.append(label);
         divi.append(input);
-        divi.append(uploadbtn);
         $('#filexd').on("change", function(event) {
             selectedFile = event.target.files[0];
         });
@@ -269,6 +253,7 @@ function uploadImage() {
         var posts = database.ref('posts');
         database.ref('posts').push(data);
         console.log(data);
+        $('#modalpostt').modal('hide');
     }else{
         var filename = selectedFile.name;
         var storageRef = firebase.storage().ref('/imagenes/' + filename);
@@ -313,6 +298,7 @@ function uploadImage() {
                 var posts = database.ref('posts');
                 database.ref('posts').push(data);
                 console.log(data);
+                $('#modalpostt').modal('hide');
             }else{
                 var data = {
                     title: postTitle,
@@ -323,7 +309,8 @@ function uploadImage() {
                 }
                 var posts = database.ref('posts');
                 database.ref('posts').push(data);
-                console.log(data);    
+                console.log(data);
+                $('#modalpostt').modal('hide');
             }
 
         });

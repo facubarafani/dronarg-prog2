@@ -2,7 +2,7 @@
 * Nombre del Proyecto: DronArg
 * Integrante: Barafani, Facundo
 * Curso: 5 "C"
-# ![DronArg](/src/logodrone.png) DronArg
+# ![DronArg](/src/logodronemd.png) DronArg
 
 # Descripcion
 Pagina web donde el usuario tiene la posibilidad de registrarse con redes sociales como Facebook,Google,etc.(En caso de no poseer ninguna de estas redes sociales puedes registrarte con tu email)

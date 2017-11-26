@@ -184,5 +184,8 @@
 #google{
     margin-left: 5px;
 }
+.d-flex {
+    display:flex;
+}
 
 display: none;

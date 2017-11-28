@@ -49,9 +49,6 @@ function facebookSignin() {
         var token = result.credential.accessToken;
         var user = result.user;
         var displayName = user.displayName;
-        console.log(token)
-        console.log(user)
-        console.log(displayName);
         if (user != null) {
             name = user.displayName;
             email = user.email;
@@ -59,7 +56,6 @@ function facebookSignin() {
             emailVerified = user.emailVerified;
             uid = user.uid;
             document.getElementById("nombre").innerHTML= name;
-            console.log(photoUrl);
             document.getElementById("foto").src= photoUrl;
             document.getElementById("boton1").innerHTML = "Cerrar Sesion";
             document.getElementById("boton1").onclick= function(){ facebookSignout(); };
@@ -82,6 +78,7 @@ function facebookSignout() {
         document.getElementById("boton1").innerHTML = "Iniciar con Facebook";
         console.log('Signout successful!')
         $("#boton1").addClass("disabled")
+        document.getElementById("nombre").innerHTML= null;
     }, function(error) {
         console.log('Signout failed')
     });
@@ -96,8 +93,6 @@ function googleSignin() {
         var user = result.user;
 
 
-        console.log(token)
-        console.log(user)
         if (user != null) {
             name = user.displayName;
             email = user.email;
@@ -155,8 +150,6 @@ function createWithEmailAndPassword(){
         console.log(error.code);
         console.log(error.message);
     });
-    console.log(email);
-    console.log(password);
 }
 function signInWithEmailAndPassword(){   
     var email;

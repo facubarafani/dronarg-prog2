@@ -34,9 +34,7 @@ $('#choosecat').change(function () {
     cat = $(this).find("option:selected").text();
 });
 function submitReply(key){
-    console.log(key)
     postReply = document.getElementById('replytext').value;
-    console.log(postReply)
     var data1 = {
         reply: postReply,
         url: photoUrl,
@@ -67,8 +65,6 @@ function actualizarDb(){
 
     postsRef.on('child_added', snap => {
 
-        console.log(snap.val());
-        console.log(snap.val().replies);
         var med = document.getElementById('colmedio');
         var div = document.createElement('div');
         var divh = document.createElement('div');
@@ -170,7 +166,6 @@ function actualizarDb(){
 
         let replies = firebase.database().ref(`/posts/${snap.key}/replies/`);
         replies.on("child_added", s => {
-            console.log(s.val().reply)
             //divf.append(s.val().reply);
             var x = snap.child('replies').numChildren();
             var divrp = document.createElement('div');
@@ -252,7 +247,6 @@ function uploadImage() {
         }
         var posts = database.ref('posts');
         database.ref('posts').push(data);
-        console.log(data);
         $('#modalpostt').modal('hide');
     }else{
         var filename = selectedFile.name;
@@ -282,7 +276,6 @@ function uploadImage() {
             // Handle successful uploads on complete
             // For instance, get the download URL: https://firebasestorage.googleapis.com/...
             var downloadURL = uploadTask.snapshot.downloadURL;
-            console.log(downloadURL);
             //submitPost();
             if (downloadURL =! null){
                 var postTitle = document.getElementById('postitle').value;
@@ -297,7 +290,6 @@ function uploadImage() {
                 }
                 var posts = database.ref('posts');
                 database.ref('posts').push(data);
-                console.log(data);
                 $('#modalpostt').modal('hide');
             }else{
                 var data = {
@@ -309,7 +301,6 @@ function uploadImage() {
                 }
                 var posts = database.ref('posts');
                 database.ref('posts').push(data);
-                console.log(data);
                 $('#modalpostt').modal('hide');
             }
 

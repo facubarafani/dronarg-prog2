@@ -36,6 +36,7 @@ Para realizar una publicacion en el foro o responder es necesario autenticarse m
 | Storage       | Almacenamiento de imagenes |
 |JQuery         | Simplificar codigo |
 | Bootstrap     | Diseño de la pagina |
+| Popper    | PLugin de JS para diseño |
 
 ## Pagina Web
 [Link DronArg](https://facubarafani.github.io/dronarg-prog2/)

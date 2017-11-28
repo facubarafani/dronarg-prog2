@@ -22,12 +22,13 @@ Ventana donde apareceran noticias sobre el mundo de los drones, cuenta con auten
 ### Foro
 La ventana mas importante de la pagina donde los usuarios podran preguntar a otros usuarios mediante la publicacion de un post el cual puede ser respondido, en el mismo se puede escribir el titulo, el contenido con el respectivo nombre y foto del que realiza la publicacion. Cuenta con la opcion de subir un post con imagenes.
 Para realizar una publicacion en el foro o responder es necesario autenticarse mediante Google o Facebook.
-⋅⋅* Creacion de publicacion
+
+* Creacion de publicacion
 ![newpost](/src/gifpost.gif)
-⋅⋅* Respuesta a una publicacion
+* Respuesta a una publicacion
 ![replypost](/src/gifrespuesta.gif)
-⋅⋅* Adjuntar imagenes en una publicacion
-![replypost](/src/gifrespuesta.gif)
+* Adjuntar imagenes en una publicacion
+![replypost](/src/gifimagen.gif)
 ### Dependencias
 | Libreria      | Descripcion   |
 | ------------- | ------------- |

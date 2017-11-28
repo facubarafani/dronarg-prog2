@@ -1,28 +1,27 @@
-$(document).ready(function () { 
-    var top = $('#colizquierda').offset().top - parseFloat($('#colizquierda').css('marginTop').replace(/auto/, 0));
-    $(window).scroll(function (event) {
-        var y = $(this).scrollTop();
-        //if y > top, it means that if we scroll down any more, parts of our element will be outside the viewport
-        //so we move the element down so that it remains in view.
-        if (y >= top) {
-            var difference = y - top;
-            $('#colizquierda').css("top",difference);
-        }
-    });
-});
-$(document).ready(function () { 
-    var top = $('#colderecha').offset().top - parseFloat($('#colderecha').css('marginTop').replace(/auto/, 0));
-    $(window).scroll(function (event) {
-        var y = $(this).scrollTop();
-        //if y > top, it means that if we scroll down any more, parts of our element will be outside the viewport
-        //so we move the element down so that it remains in view.
-        if (y >= top) {
-            var difference = y - top;
-            $('#colderecha').css("top",difference);
-        }
-    });
-});
-
+//$(document).ready(function () { 
+//    var top = $('#colizquierda').offset().top - parseFloat($('#colizquierda').css('marginTop').replace(/auto/, 0));
+//    $(window).scroll(function (event) {
+//        var y = $(this).scrollTop();
+//        //if y > top, it means that if we scroll down any more, parts of our element will be outside the viewport
+//        //so we move the element down so that it remains in view.
+//        if (y >= top) {
+//            var difference = y - top;
+//            $('#colizquierda').css("top",difference);
+//        } 
+//    });
+//});
+//$(document).ready(function () { 
+//    var top = $('#colderecha').offset().top - parseFloat($('#colderecha').css('marginTop').replace(/auto/, 0));
+//    $(window).scroll(function (event) {
+//        var y = $(this).scrollTop();
+//        //if y > top, it means that if we scroll down any more, parts of our element will be outside the viewport
+//        //so we move the element down so that it remains in view.
+//        if (y >= top) {
+//            var difference = y - top;
+//            $('#colderecha').css("top",difference);
+//        }
+//    });
+//});
 
 window.fbAsyncInit = function() {
     FB.init ({
